@@ -3,6 +3,8 @@ package multithread.code.practice.ch8;
 import java.util.concurrent.ThreadFactory;
 
 /**
+ * ThreadFactory demo
+ * https://lanffy.github.io/2017/05/28/create-thread-by-threadFactory
  * @author zhangpeng
  * @Date 2020/9/3
  */
