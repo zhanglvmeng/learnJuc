@@ -12,6 +12,9 @@ public class ThreadFactoryDemo {
         FactoryDemo factoryDemo = new FactoryDemo();
         Thread t = factoryDemo.newThread(new Task());
         t.start();
+        System.out.println(t.getName());
+        Thread thread = factoryDemo.newThread(new Task());
+        System.out.println(thread.getName());
     }
 
     static class Task implements Runnable {
