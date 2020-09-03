@@ -21,6 +21,9 @@ public class ThreadPoolDemo {
         ThreadPoolDemo threadPoolDemo = new ThreadPoolDemo();
         Future<String> future = recognizeFuture("file");
         try {
+            // 是否取消
+//            future.cancel(true);
+//            System.out.println("cancel is ok ? " + future.isCancelled());
             String result = future.get(10 * 1000, TimeUnit.MILLISECONDS);
             System.out.println(result);
         } catch (InterruptedException e) {
