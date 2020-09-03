@@ -26,7 +26,7 @@ public class ThreadFactoryDemo {
         }
     }
 
-    static class FactoryDemo implements ThreadFactory {
+    public static class FactoryDemo implements ThreadFactory {
         private int counter;
 
         FactoryDemo() {
