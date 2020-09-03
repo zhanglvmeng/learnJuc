@@ -18,12 +18,14 @@ public class ThreadPoolDemo {
             new ThreadPoolExecutor.CallerRunsPolicy());
 
     public static void main(String[] args) {
+        System.out.println("cpu count : " + N_CPU);
         ThreadPoolDemo threadPoolDemo = new ThreadPoolDemo();
         Future<String> future = recognizeFuture("file");
         try {
             // 是否取消
 //            future.cancel(true);
 //            System.out.println("cancel is ok ? " + future.isCancelled());
+            monitorPool(threadPoolExecutor);
             String result = future.get(10 * 1000, TimeUnit.MILLISECONDS);
             System.out.println(result);
         } catch (InterruptedException e) {
@@ -57,5 +59,14 @@ public class ThreadPoolDemo {
         });
     }
 
+    /**
+     * 线程池监控
+     * @param threadPoolExecutor
+     */
+    private static void monitorPool(ThreadPoolExecutor threadPoolExecutor) {
+        System.out.println("pool size : " + threadPoolExecutor.getPoolSize());
+        System.out.println("queue size: " + threadPoolExecutor.getQueue().size());
+        System.out.println("largest pool size : " + threadPoolExecutor.getLargestPoolSize());
+    }
 
 }
