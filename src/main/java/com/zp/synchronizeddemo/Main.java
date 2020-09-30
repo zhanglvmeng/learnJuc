@@ -2,6 +2,11 @@ package com.zp.synchronizeddemo;
 
 import org.openjdk.jol.info.ClassLayout;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicIntegerArray;
+import java.util.function.IntBinaryOperator;
+
 /**
  *  参考文献：
  *  http://cmsblogs.com/?p=2071
@@ -9,8 +14,21 @@ import org.openjdk.jol.info.ClassLayout;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        weightLock();
+    private final int[] arr;
+
+    Main() {
+        this.arr = new int[]{1,2,3};
+    }
+
+    private final static AtomicIntegerArray ATOMIC_INTEGER_ARRAY = new AtomicIntegerArray(new int[]{1,2,3,4,5,6,7,8,9,10});
+
+    public static void main(String[] args) throws Exception {
+//        int i = 1;
+//        if (i >=1 && i <= 1) {
+//            System.out.println(true);
+//        }
+        Random random = new Random();
+        System.out.println(random.nextInt(-1));
     }
 
     /**

@@ -20,37 +20,44 @@ public class ThreadPoolDemo {
 
 
     public static void main(String[] args) {
-//        System.out.println("cpu count : " + N_CPU);
-        ThreadPoolDemo threadPoolDemo = new ThreadPoolDemo();
-        int threadCount = 0;
         try {
-            Future future = recognizeFuture(++threadCount);
-            Future future2 = recognizeFuture(++threadCount);
-            // 是否取消
-//            future.cancel(true);
-//            System.out.println("cancel is ok ? " + future.isCancelled());
-//            monitorPool(threadPoolExecutor);
-            Thread.sleep(2000);
-            future.get(10 * 1000, TimeUnit.MILLISECONDS);
-
-            System.out.println("------------- 分割线 ------------- ");
-            // 是否取消
-//            future.cancel(true);
-//            System.out.println("cancel is ok ? " + future.isCancelled());
-//            monitorPool(threadPoolExecutor);
-            future2.get(10 * 1000, TimeUnit.MILLISECONDS);
-            System.out.println("结束了");
-
-        } catch (InterruptedException e) {
+            String s = null;
+            System.out.println(s);
+        } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("interrupt exception");
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-            System.out.println("execution exception");
-        } catch (TimeoutException e) {
-            e.printStackTrace();
-            System.out.println("time out exception");
         }
+
+////        System.out.println("cpu count : " + N_CPU);
+//        ThreadPoolDemo threadPoolDemo = new ThreadPoolDemo();
+//        int threadCount = 0;
+//        try {
+//            Future future = recognizeFuture(++threadCount);
+//            Future future2 = recognizeFuture(++threadCount);
+//            // 是否取消
+////            future.cancel(true);
+////            System.out.println("cancel is ok ? " + future.isCancelled());
+////            monitorPool(threadPoolExecutor);
+//            Thread.sleep(2000);
+//            future.get(10 * 1000, TimeUnit.MILLISECONDS);
+//
+//            System.out.println("------------- 分割线 ------------- ");
+//            // 是否取消
+////            future.cancel(true);
+////            System.out.println("cancel is ok ? " + future.isCancelled());
+////            monitorPool(threadPoolExecutor);
+//            future2.get(10 * 1000, TimeUnit.MILLISECONDS);
+//            System.out.println("结束了");
+//
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//            System.out.println("interrupt exception");
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//            System.out.println("execution exception");
+//        } catch (TimeoutException e) {
+//            e.printStackTrace();
+//            System.out.println("time out exception");
+//        }
 
 
     }
