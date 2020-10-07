@@ -60,10 +60,15 @@ public class CountDownLatchDemo {
             countDownLatch.countDown();
             System.out.println("countDownLatch count is " + countDownLatch.getCount());
             TheadSleepRandomUtils.sleepRandomSecond(5);
+            System.out.println(Thread.currentThread().getThreadGroup());
         }
     }
 
     public static void main(String[] args){
+        System.out.println(Thread.currentThread().getThreadGroup().getParent().getParent());
+        System.out.println(Thread.currentThread().getThreadGroup().getParent());
+        System.out.println(Thread.currentThread().getThreadGroup());
+
         //Boss线程启动
         new BossThread().start();
         // 会计线程启动
