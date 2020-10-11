@@ -1,4 +1,4 @@
-package basic.dispatch;
+package basic.dispatch.staticdemo;
 
 /**
  * @author zhangpeng
