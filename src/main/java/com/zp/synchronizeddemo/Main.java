@@ -23,12 +23,11 @@ public class Main {
     private final static AtomicIntegerArray ATOMIC_INTEGER_ARRAY = new AtomicIntegerArray(new int[]{1,2,3,4,5,6,7,8,9,10});
 
     public static void main(String[] args) throws Exception {
-//        int i = 1;
-//        if (i >=1 && i <= 1) {
-//            System.out.println(true);
-//        }
-        Random random = new Random();
-        System.out.println(random.nextInt(-1));
+//        noLock();
+//        biasedToNothing();
+        System.out.println("main thread id " + Thread.currentThread().getId());
+//        biasedToMain();
+        lightLock();
     }
 
     /**
